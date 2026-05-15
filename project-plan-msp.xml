@@ -1,0 +1,2455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns="http://schemas.microsoft.com/project">
+  <Name>Resume Analyzer - Full Stack Web Application</Name>
+  <CreationDate>2026-04-22T00:00:00</CreationDate>
+  <StartDate>2026-04-22</StartDate>
+  <FinishDate>2026-08-15</FinishDate>
+  <ScheduleFromStart>1</ScheduleFromStart>
+  <WeekStartDay>Monday</WeekStartDay>
+  <DefaultStartTime>09:00:00</DefaultStartTime>
+  <DefaultFinishTime>17:00:00</DefaultFinishTime>
+
+  <Tasks>
+    <!-- PHASE 1: BACKEND INFRASTRUCTURE -->
+    <Task>
+      <UID>1</UID>
+      <Name>PHASE 1: Backend Infrastructure</Name>
+      <OutlineLevel>0</OutlineLevel>
+      <Milestone>1</Milestone>
+    </Task>
+
+    <!-- 1.1 Database Setup & Configuration -->
+    <Task>
+      <UID>2</UID>
+      <Name>1.1 Database Setup & Configuration</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT40H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>1</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>3</UID>
+      <Name>1.1.1 Initialize PostgreSQL database</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>2</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>4</UID>
+      <Name>1.1.2 Create Alembic migration environment</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>2</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>5</UID>
+      <Name>1.1.3 Create SQLModel User model with subscription_tier field</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>3</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>6</UID>
+      <Name>1.1.4 Create SQLModel Resume model</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>5</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>7</UID>
+      <Name>1.1.5 Create SQLModel AnalysisResult model</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>6</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>8</UID>
+      <Name>1.1.6 Create SQLModel SubscriptionTier model</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT2H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>7</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>9</UID>
+      <Name>1.1.7 Create SQLModel RateLimitLog model</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT2H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>8</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>10</UID>
+      <Name>1.1.8 Create SQLModel OAuth2Provider model</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>9</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>11</UID>
+      <Name>1.1.9 Create database session management</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>10</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>12</UID>
+      <Name>1.1.10 Generate and run initial migration</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>11</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.2 Core Configuration & Security -->
+    <Task>
+      <UID>13</UID>
+      <Name>1.2 Core Configuration & Security</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT24H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>12</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>14</UID>
+      <Name>1.2.1 Create .env and .env.example files</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT2H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>13</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>15</UID>
+      <Name>1.2.2 Create app/core/config.py with Pydantic Settings</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>14</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>16</UID>
+      <Name>1.2.3 Implement JWT utilities in app/core/security.py</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>15</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>17</UID>
+      <Name>1.2.4 Implement password hashing utilities with bcrypt</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>16</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>18</UID>
+      <Name>1.2.5 Create helper functions for token operations</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>17</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.3 Authentication Service - Email/Password -->
+    <Task>
+      <UID>19</UID>
+      <Name>1.3 Authentication Service - Email/Password</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT24H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>13</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>20</UID>
+      <Name>1.3.1 Create app/schemas/user.py with Pydantic models</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>19</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>21</UID>
+      <Name>1.3.2 Create app/services/auth_service.py</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>20</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>22</UID>
+      <Name>1.3.3 Implement password validation logic</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>21</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>23</UID>
+      <Name>1.3.4 Add email format validation and uniqueness check</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>22</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>24</UID>
+      <Name>1.3.5 Create token refresh logic with refresh token rotation</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>23</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.4 OAuth2 Integration Service -->
+    <Task>
+      <UID>25</UID>
+      <Name>1.4 OAuth2 Integration Service</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT32H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>19</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>26</UID>
+      <Name>1.4.1 Create app/services/oauth2_service.py</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>25</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>27</UID>
+      <Name>1.4.2 Implement Google OAuth2 flow</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>26</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>28</UID>
+      <Name>1.4.3 Implement GitHub OAuth2 flow</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>27</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>29</UID>
+      <Name>1.4.4 Implement Facebook OAuth2 flow</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>28</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>30</UID>
+      <Name>1.4.5 Create method to link OAuth2 account to existing user</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>29</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>31</UID>
+      <Name>1.4.6 Store OAuth2 tokens securely in database</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>30</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.5 Authentication API Endpoints -->
+    <Task>
+      <UID>32</UID>
+      <Name>1.5 Authentication API Endpoints</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT40H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>25</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>33</UID>
+      <Name>1.5.1 Create app/api/v1/auth.py router</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>32</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>34</UID>
+      <Name>1.5.2 POST /api/v1/auth/register endpoint</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>33</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>35</UID>
+      <Name>1.5.3 POST /api/v1/auth/login endpoint</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>34</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>36</UID>
+      <Name>1.5.4 POST /api/v1/auth/refresh endpoint</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>35</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>37</UID>
+      <Name>1.5.5 POST /api/v1/auth/logout endpoint</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT2H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>36</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>38</UID>
+      <Name>1.5.6 Google OAuth2 endpoints (authorize, callback)</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>37</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>39</UID>
+      <Name>1.5.7 GitHub OAuth2 endpoints (authorize, callback)</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>38</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>40</UID>
+      <Name>1.5.8 Facebook OAuth2 endpoints (authorize, callback)</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>39</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>41</UID>
+      <Name>1.5.9 Add OAuth2 error handling and validation</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>40</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>42</UID>
+      <Name>1.5.10 Implement rate limiting for auth endpoints</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>41</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>43</UID>
+      <Name>1.5.11 Add comprehensive endpoint tests</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT6H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>42</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.6 JWT Middleware & Authorization -->
+    <Task>
+      <UID>44</UID>
+      <Name>1.6 JWT Middleware & Authorization</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT16H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>43</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>45</UID>
+      <Name>1.6.1 Create app/middleware/auth_middleware.py</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>44</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>46</UID>
+      <Name>1.6.2 Implement JWT validation middleware</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>45</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>47</UID>
+      <Name>1.6.3 Create dependency injection for protected routes</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>46</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.7 User Management Service -->
+    <Task>
+      <UID>48</UID>
+      <Name>1.7 User Management Service</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT16H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>47</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>49</UID>
+      <Name>1.7.1 Create app/services/user_service.py</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>48</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>50</UID>
+      <Name>1.7.2 Implement get_user_profile() method</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>49</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>51</UID>
+      <Name>1.7.3 Create update_subscription_tier() method</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>50</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.8 Resume Management Service -->
+    <Task>
+      <UID>52</UID>
+      <Name>1.8 Resume Management Service</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT32H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>51</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>53</UID>
+      <Name>1.8.1 Create app/services/resume_service.py</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>52</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>54</UID>
+      <Name>1.8.2 Implement PDF parsing using PyPDF2</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>53</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>55</UID>
+      <Name>1.8.3 Implement DOCX parsing using python-docx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>54</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>56</UID>
+      <Name>1.8.4 Create upload_resume() method</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>55</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>57</UID>
+      <Name>1.8.5 Create extract_text_from_resume() method</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT2H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>56</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>58</UID>
+      <Name>1.8.6 Create methods for resume CRUD operations</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>57</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>59</UID>
+      <Name>1.8.7 Implement file validation (format, size)</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT2H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>58</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.9 AI Analysis Service - OpenAI Integration -->
+    <Task>
+      <UID>60</UID>
+      <Name>1.9 AI Analysis Service - OpenAI Integration</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT24H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>59</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>61</UID>
+      <Name>1.9.1 Create app/services/ai_service.py</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>60</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>62</UID>
+      <Name>1.9.2 Initialize OpenAI client with API key</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>61</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>63</UID>
+      <Name>1.9.3 Create analyze_resume() method</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>62</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>64</UID>
+      <Name>1.9.4 Design and implement prompt structure</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>63</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>65</UID>
+      <Name>1.9.5 Implement response parsing and error handling</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>64</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.10 Resume API Endpoints -->
+    <Task>
+      <UID>66</UID>
+      <Name>1.10 Resume API Endpoints</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT16H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>60</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>67</UID>
+      <Name>1.10.1 Create app/api/v1/resumes.py router</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>66</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>68</UID>
+      <Name>1.10.2 POST /api/v1/resumes/upload endpoint</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>67</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>69</UID>
+      <Name>1.10.3 GET /api/v1/resumes endpoints</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>68</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>70</UID>
+      <Name>1.10.4 DELETE /api/v1/resumes/{resume_id} endpoint</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>69</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.11 Rate Limiting & Subscription Service -->
+    <Task>
+      <UID>71</UID>
+      <Name>1.11 Rate Limiting & Subscription Service</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT24H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>66</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>72</UID>
+      <Name>1.11.1 Create app/services/rate_limit_service.py</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>71</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>73</UID>
+      <Name>1.11.2 Implement check_subscription_limit() method</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>72</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>74</UID>
+      <Name>1.11.3 Implement log_analysis_usage() method</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>73</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>75</UID>
+      <Name>1.11.4 Create reset_usage_count() method</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>74</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>76</UID>
+      <Name>1.11.5 Implement rate limiting decorator</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>75</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.12 Analysis API Endpoint -->
+    <Task>
+      <UID>77</UID>
+      <Name>1.12 Analysis API Endpoint</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>71</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>78</UID>
+      <Name>1.12.1 POST /api/v1/analysis/analyze endpoint</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>77</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.13 Error Handling & Validation -->
+    <Task>
+      <UID>79</UID>
+      <Name>1.13 Error Handling & Validation</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT16H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>78</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>80</UID>
+      <Name>1.13.1 Create app/utils/validators.py</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>79</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>81</UID>
+      <Name>1.13.2 Create custom exception classes</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>80</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>82</UID>
+      <Name>1.13.3 Add global error handler middleware</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>81</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>83</UID>
+      <Name>1.13.4 Implement input validation for all endpoints</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>82</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.14 Testing Setup & Tests -->
+    <Task>
+      <UID>84</UID>
+      <Name>1.14 Testing Setup & Tests</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT32H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>79</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>85</UID>
+      <Name>1.14.1 Create tests/conftest.py with PyTest fixtures</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>84</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>86</UID>
+      <Name>1.14.2 Create comprehensive auth tests</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>85</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>87</UID>
+      <Name>1.14.3 Create resume endpoint and service tests</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT6H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>86</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>88</UID>
+      <Name>1.14.4 Create analysis endpoint tests</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>87</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>89</UID>
+      <Name>1.14.5 Create AI service tests</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>88</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>90</UID>
+      <Name>1.14.6 Create rate limiting tests</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT2H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>89</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>91</UID>
+      <Name>1.14.7 Setup pytest.ini</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT2H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>90</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>92</UID>
+      <Name>1.14.8 Achieve 70%+ test coverage</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT2H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>91</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.15 Documentation & Setup -->
+    <Task>
+      <UID>93</UID>
+      <Name>1.15 Documentation & Setup</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT12H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>84</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>94</UID>
+      <Name>1.15.1 Create backend/requirements.txt</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>93</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>95</UID>
+      <Name>1.15.2 Create backend/.env.example</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>94</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>96</UID>
+      <Name>1.15.3 Create backend/README.md</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>95</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 1.16 Application Entry Point -->
+    <Task>
+      <UID>97</UID>
+      <Name>1.16 Application Entry Point</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>93</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>98</UID>
+      <Name>1.16.1 Create backend/main.py entry point</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>97</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>99</UID>
+      <Name>1.16.2 Configure FastAPI app, middleware stack, router registration</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>98</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- PHASE 1 COMPLETE -->
+    <Task>
+      <UID>100</UID>
+      <Name>PHASE 1 COMPLETE: Backend Infrastructure</Name>
+      <OutlineLevel>0</OutlineLevel>
+      <Milestone>1</Milestone>
+      <PredecessorLink>
+        <PredecessorUID>99</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- PHASE 2: FRONTEND INFRASTRUCTURE -->
+    <Task>
+      <UID>101</UID>
+      <Name>PHASE 2: Frontend Infrastructure</Name>
+      <OutlineLevel>0</OutlineLevel>
+      <Milestone>1</Milestone>
+    </Task>
+
+    <!-- 2.1 Project Initialization -->
+    <Task>
+      <UID>102</UID>
+      <Name>2.1 Project Initialization</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT24H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>101</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>103</UID>
+      <Name>2.1.1 Initialize React + Vite project in /frontend</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>102</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>104</UID>
+      <Name>2.1.2 Install all dependencies</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>103</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>105</UID>
+      <Name>2.1.3 Configure Tailwind CSS with dark mode</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>104</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>106</UID>
+      <Name>2.1.4 Configure ESLint and Prettier</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>105</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>107</UID>
+      <Name>2.1.5 Setup Vite config with API proxy</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>106</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.2 State Management - Zustand Stores -->
+    <Task>
+      <UID>108</UID>
+      <Name>2.2 State Management - Zustand Stores</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT16H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>102</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>109</UID>
+      <Name>2.2.1 Create store/authStore.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>108</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>110</UID>
+      <Name>2.2.2 Create store/resumeStore.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>109</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>111</UID>
+      <Name>2.2.3 Create store/analysisStore.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>110</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>112</UID>
+      <Name>2.2.4 Create store/subscriptionStore.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>111</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.3 API Service Layer -->
+    <Task>
+      <UID>113</UID>
+      <Name>2.3 API Service Layer</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT16H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>108</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>114</UID>
+      <Name>2.3.1 Create services/apiClient.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>113</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>115</UID>
+      <Name>2.3.2 Create services/authService.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>114</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>116</UID>
+      <Name>2.3.3 Create services/resumeService.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>115</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>117</UID>
+      <Name>2.3.4 Create services/analysisService.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>116</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.4 Custom React Hooks -->
+    <Task>
+      <UID>118</UID>
+      <Name>2.4 Custom React Hooks</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT16H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>113</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>119</UID>
+      <Name>2.4.1 Create hooks/useAuth.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>118</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>120</UID>
+      <Name>2.4.2 Create hooks/useResume.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>119</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>121</UID>
+      <Name>2.4.3 Create hooks/useAnalysis.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>120</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>122</UID>
+      <Name>2.4.4 Create hooks/useJWT.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>121</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.5 Material UI Custom Components -->
+    <Task>
+      <UID>123</UID>
+      <Name>2.5 Material UI Custom Components</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT32H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>118</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>124</UID>
+      <Name>2.5.1 Create components/ui/Button.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>123</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>125</UID>
+      <Name>2.5.2 Create components/ui/Input.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>124</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>126</UID>
+      <Name>2.5.3 Create components/ui/Card.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>125</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>127</UID>
+      <Name>2.5.4 Create components/ui/Modal.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>126</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>128</UID>
+      <Name>2.5.5 Create components/ui/Alert.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>127</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>129</UID>
+      <Name>2.5.6 Create components/ui/Spinner.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>128</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>130</UID>
+      <Name>2.5.7 Create components/ui/Textarea.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>129</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>131</UID>
+      <Name>2.5.8 Create components/ui/FormError.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>130</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.6 Common Components -->
+    <Task>
+      <UID>132</UID>
+      <Name>2.6 Common Components</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT20H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>123</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>133</UID>
+      <Name>2.6.1 Create components/common/Navbar.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>132</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>134</UID>
+      <Name>2.6.2 Create components/common/Footer.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>133</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>135</UID>
+      <Name>2.6.3 Create components/common/ErrorBoundary.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>134</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>136</UID>
+      <Name>2.6.4 Create components/common/LoadingSpinner.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>135</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>137</UID>
+      <Name>2.6.5 Create components/common/Notification.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>136</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.7 Authentication Components -->
+    <Task>
+      <UID>138</UID>
+      <Name>2.7 Authentication Components</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT20H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>132</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>139</UID>
+      <Name>2.7.1 Create components/auth/LoginPage.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>138</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>140</UID>
+      <Name>2.7.2 Create components/auth/SignupPage.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>139</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>141</UID>
+      <Name>2.7.3 Create components/forms/LoginForm.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>140</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>142</UID>
+      <Name>2.7.4 Create components/forms/SignupForm.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>141</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>143</UID>
+      <Name>2.7.5 Create components/auth/ProtectedRoute.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>142</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.8 Dashboard Components -->
+    <Task>
+      <UID>144</UID>
+      <Name>2.8 Dashboard Components</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT16H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>138</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>145</UID>
+      <Name>2.8.1 Create components/dashboard/DashboardPage.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>144</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>146</UID>
+      <Name>2.8.2 Create components/dashboard/ResumeUpload.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>145</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>147</UID>
+      <Name>2.8.3 Create components/dashboard/JobDescriptionInput.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>146</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>148</UID>
+      <Name>2.8.4 Create components/dashboard/SubscriptionBanner.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>147</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.9 Results Components -->
+    <Task>
+      <UID>149</UID>
+      <Name>2.9 Results Components</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT24H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>144</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>150</UID>
+      <Name>2.9.1 Create components/results/AnalysisResultsPage.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>149</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>151</UID>
+      <Name>2.9.2 Create components/results/MatchScoreDisplay.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>150</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>152</UID>
+      <Name>2.9.3 Create components/results/KeywordMatches.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>151</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>153</UID>
+      <Name>2.9.4 Create components/results/MissingKeywords.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>152</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>154</UID>
+      <Name>2.9.5 Create components/results/Recommendations.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>153</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>155</UID>
+      <Name>2.9.6 Create components/results/ExportResults.jsx</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>154</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.10 Utilities -->
+    <Task>
+      <UID>156</UID>
+      <Name>2.10 Utilities</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT16H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>149</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>157</UID>
+      <Name>2.10.1 Create utils/validators.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>156</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>158</UID>
+      <Name>2.10.2 Create utils/constants.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>157</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>159</UID>
+      <Name>2.10.3 Create utils/helpers.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>158</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>160</UID>
+      <Name>2.10.4 Create utils/darkModeToggle.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>159</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.11 Main App Structure -->
+    <Task>
+      <UID>161</UID>
+      <Name>2.11 Main App Structure</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT12H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>156</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>162</UID>
+      <Name>2.11.1 Create App.jsx with React Router</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>161</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>163</UID>
+      <Name>2.11.2 Create main.jsx entry point</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>162</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>164</UID>
+      <Name>2.11.3 Create index.css with global styles</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>163</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.12 Theme & Style Configuration -->
+    <Task>
+      <UID>165</UID>
+      <Name>2.12 Theme & Style Configuration</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT12H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>161</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>166</UID>
+      <Name>2.12.1 Create tailwind.config.js with dark mode</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>165</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>167</UID>
+      <Name>2.12.2 Define color palette</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>166</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>168</UID>
+      <Name>2.12.3 Configure responsive breakpoints</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>167</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.13 Environment Configuration -->
+    <Task>
+      <UID>169</UID>
+      <Name>2.13 Environment Configuration</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>165</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>170</UID>
+      <Name>2.13.1 Create .env.example</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>169</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>171</UID>
+      <Name>2.13.2 Create .env.local for development</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>170</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 2.14 Package & Build Configuration -->
+    <Task>
+      <UID>172</UID>
+      <Name>2.14 Package & Build Configuration</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT20H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>169</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>173</UID>
+      <Name>2.14.1 Create frontend/package.json</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>172</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>174</UID>
+      <Name>2.14.2 Create frontend/vite.config.js</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>173</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>175</UID>
+      <Name>2.14.3 Create frontend/.eslintrc.json</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>174</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>176</UID>
+      <Name>2.14.4 Create frontend/.prettierrc</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>175</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>177</UID>
+      <Name>2.14.5 Create frontend/index.html</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>176</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- PHASE 2 COMPLETE -->
+    <Task>
+      <UID>178</UID>
+      <Name>PHASE 2 COMPLETE: Frontend Infrastructure</Name>
+      <OutlineLevel>0</OutlineLevel>
+      <Milestone>1</Milestone>
+      <PredecessorLink>
+        <PredecessorUID>177</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- PHASE 3: INTEGRATION & REFINEMENT -->
+    <Task>
+      <UID>179</UID>
+      <Name>PHASE 3: Integration & Refinement</Name>
+      <OutlineLevel>0</OutlineLevel>
+      <Milestone>1</Milestone>
+      <PredecessorLink>
+        <PredecessorUID>100</PredecessorUID>
+        <Type>0</Type>
+        <LinkLag>0</LinkLag>
+      </PredecessorLink>
+      <PredecessorLink>
+        <PredecessorUID>178</PredecessorUID>
+        <Type>0</Type>
+        <LinkLag>0</LinkLag>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 3.1 Backend-Frontend Connection -->
+    <Task>
+      <UID>180</UID>
+      <Name>3.1 Backend-Frontend Connection</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT24H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>179</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>181</UID>
+      <Name>3.1.1 Configure frontend API client to connect to backend</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>180</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>182</UID>
+      <Name>3.1.2 Test all API calls from frontend</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>181</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>183</UID>
+      <Name>3.1.3 Verify JWT token generation and storage</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>182</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>184</UID>
+      <Name>3.1.4 Test OAuth2 flows end-to-end</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>183</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>185</UID>
+      <Name>3.1.5 Verify CORS configuration</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT2H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>184</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>186</UID>
+      <Name>3.1.6 Fix any integration issues</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT2H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>185</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 3.2 Complete User Flow Testing -->
+    <Task>
+      <UID>187</UID>
+      <Name>3.2 Complete User Flow Testing</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT40H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>180</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>188</UID>
+      <Name>3.2.1 Test email/password registration flow</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>187</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>189</UID>
+      <Name>3.2.2 Test email/password login flow</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>188</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>190</UID>
+      <Name>3.2.3-5 Test OAuth2 logins (Google, GitHub, Facebook)</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>189</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>191</UID>
+      <Name>3.2.6 Test resume upload and display</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>190</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>192</UID>
+      <Name>3.2.7 Test analysis flow</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>191</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>193</UID>
+      <Name>3.2.8 Test rate limiting</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>192</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>194</UID>
+      <Name>3.2.9 Test subscription tier transitions</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>193</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>195</UID>
+      <Name>3.2.10 Test logout and token refresh</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>194</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 3.3 Error Scenario Testing -->
+    <Task>
+      <UID>196</UID>
+      <Name>3.3 Error Scenario Testing</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT32H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>187</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>197</UID>
+      <Name>3.3.1 Test invalid file uploads</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>196</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>198</UID>
+      <Name>3.3.2 Test missing job description</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>197</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>199</UID>
+      <Name>3.3.3 Test API calls without JWT token</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>198</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>200</UID>
+      <Name>3.3.4 Test expired token handling</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>199</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>201</UID>
+      <Name>3.3.5 Test rate limit exceeded responses</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>200</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>202</UID>
+      <Name>3.3.6-8 Test network, API failures, duplicate email</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>201</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 3.4 Performance Optimization -->
+    <Task>
+      <UID>203</UID>
+      <Name>3.4 Performance Optimization</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT24H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>196</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>204</UID>
+      <Name>3.4.1 Analyze frontend bundle size</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>203</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>205</UID>
+      <Name>3.4.2 Implement code splitting for routes</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>204</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>206</UID>
+      <Name>3.4.3 Optimize resume file uploads</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>205</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>207</UID>
+      <Name>3.4.4 Add database indexes</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>206</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>208</UID>
+      <Name>3.4.5-6 Test page load and response times</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>207</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 3.5 Security Review -->
+    <Task>
+      <UID>209</UID>
+      <Name>3.5 Security Review</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT24H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>203</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>210</UID>
+      <Name>3.5.1-2 Verify CORS and JWT tokens</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>209</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>211</UID>
+      <Name>3.5.3-4 Verify password hashing and OAuth2 secrets</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>210</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>212</UID>
+      <Name>3.5.5-6 Test SQL injection and rate limiting</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>211</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 3.6 Documentation -->
+    <Task>
+      <UID>213</UID>
+      <Name>3.6 Documentation</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT24H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>209</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>214</UID>
+      <Name>3.6.1 Create comprehensive frontend README</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>213</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>215</UID>
+      <Name>3.6.2 Create comprehensive backend README</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>214</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>216</UID>
+      <Name>3.6.3 Create API documentation</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>215</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>217</UID>
+      <Name>3.6.4-6 Create architecture docs, schema docs, deployment guide</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>216</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 3.7 Deployment Preparation -->
+    <Task>
+      <UID>218</UID>
+      <Name>3.7 Deployment Preparation</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT24H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>213</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>219</UID>
+      <Name>3.7.1 Create Dockerfile for backend</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>218</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>220</UID>
+      <Name>3.7.2 Create Dockerfile for frontend</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>219</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>221</UID>
+      <Name>3.7.3 Create docker-compose.yml</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>220</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>222</UID>
+      <Name>3.7.4 Test Docker build and run</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>221</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>223</UID>
+      <Name>3.7.5-6 Setup env variables and create deployment checklist</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>222</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- 3.8 Final Testing & QA -->
+    <Task>
+      <UID>224</UID>
+      <Name>3.8 Final Testing & QA</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Duration>PT32H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>218</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>225</UID>
+      <Name>3.8.1 Full regression testing</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>224</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>226</UID>
+      <Name>3.8.2 Cross-browser testing</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>225</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>227</UID>
+      <Name>3.8.3 Mobile device testing</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>226</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>228</UID>
+      <Name>3.8.4 Accessibility testing</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>227</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>229</UID>
+      <Name>3.8.5 Load testing</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT4H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>228</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+    <Task>
+      <UID>230</UID>
+      <Name>3.8.6-8 Security, acceptance, benchmarking</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Duration>PT8H</Duration>
+      <PredecessorLink>
+        <PredecessorUID>229</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+
+    <!-- PROJECT COMPLETE -->
+    <Task>
+      <UID>231</UID>
+      <Name>PROJECT COMPLETE: Resume Analyzer</Name>
+      <OutlineLevel>0</OutlineLevel>
+      <Milestone>1</Milestone>
+      <PredecessorLink>
+        <PredecessorUID>224</PredecessorUID>
+        <Type>0</Type>
+      </PredecessorLink>
+    </Task>
+  </Tasks>
+
+  <Resources>
+    <Resource>
+      <UID>1</UID>
+      <Name>Backend Developer</Name>
+      <Type>1</Type>
+      <Work>PT560H</Work>
+    </Resource>
+    <Resource>
+      <UID>2</UID>
+      <Name>Frontend Developer</Name>
+      <Type>1</Type>
+      <Work>PT480H</Work>
+    </Resource>
+    <Resource>
+      <UID>3</UID>
+      <Name>Full Stack Developer</Name>
+      <Type>1</Type>
+      <Work>PT200H</Work>
+    </Resource>
+    <Resource>
+      <UID>4</UID>
+      <Name>QA Tester</Name>
+      <Type>1</Type>
+      <Work>PT100H</Work>
+    </Resource>
+  </Resources>
+
+  <Assignments>
+    <!-- Phase 1 Assignments -->
+    <Assignment>
+      <UID>1</UID>
+      <TaskUID>1</TaskUID>
+      <ResourceUID>1</ResourceUID>
+    </Assignment>
+    <Assignment>
+      <UID>2</UID>
+      <TaskUID>101</TaskUID>
+      <ResourceUID>2</ResourceUID>
+    </Assignment>
+    <Assignment>
+      <UID>3</UID>
+      <TaskUID>179</TaskUID>
+      <ResourceUID>3</ResourceUID>
+    </Assignment>
+  </Assignments>
+</Project>
